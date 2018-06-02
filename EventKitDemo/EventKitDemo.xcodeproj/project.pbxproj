@@ -11,6 +11,7 @@
 		FB35A28D20C2FBAF00ADB60E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB35A28B20C2FBAF00ADB60E /* Main.storyboard */; };
 		FB35A28F20C2FBB000ADB60E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB35A28E20C2FBB000ADB60E /* Assets.xcassets */; };
 		FB35A29220C2FBB000ADB60E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB35A29020C2FBB000ADB60E /* LaunchScreen.storyboard */; };
+		FB9FA4F420C30E6C00787512 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9FA4F320C30E6C00787512 /* CalendarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		FB35A28E20C2FBB000ADB60E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB35A29120C2FBB000ADB60E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB35A29320C2FBB000ADB60E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB9FA4F320C30E6C00787512 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				FB35A28720C2FBAF00ADB60E /* AppDelegate.swift */,
+				FB9FA4F320C30E6C00787512 /* CalendarViewController.swift */,
 				FB35A28B20C2FBAF00ADB60E /* Main.storyboard */,
 				FB35A28E20C2FBB000ADB60E /* Assets.xcassets */,
 				FB35A29020C2FBB000ADB60E /* LaunchScreen.storyboard */,
@@ -132,6 +135,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB9FA4F420C30E6C00787512 /* CalendarViewController.swift in Sources */,
 				FB35A28820C2FBAF00ADB60E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
