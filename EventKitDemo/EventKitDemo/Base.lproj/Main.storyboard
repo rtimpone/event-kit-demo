@@ -19,29 +19,80 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0ie-Mv-kTR">
-                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="694"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g7e-DK-84C" userLabel="Button Container View">
+                                <rect key="frame" x="0.0" y="738" width="375" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IrE-WU-vhN" userLabel="Previous Day Button">
+                                        <rect key="frame" x="8" y="-7" width="50" height="54"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="ecH-JL-qxM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="36"/>
+                                        <state key="normal" title="&lt;">
+                                            <color key="titleColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="previousDayAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1US-9y-sYf"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lv-3i-0KF" userLabel="Selected Day Label">
+                                        <rect key="frame" x="166" y="11" width="49" height="19"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
+                                        <color key="textColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ruw-p9-aVe" userLabel="Next Day Button">
+                                        <rect key="frame" x="317" y="-7" width="50" height="54"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="3Gp-bD-nIE"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="36"/>
+                                        <state key="normal" title="&gt;">
+                                            <color key="titleColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="nextDayAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Y2-sZ-LyM"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="ruw-p9-aVe" firstAttribute="centerY" secondItem="g7e-DK-84C" secondAttribute="centerY" id="4VV-4Q-sLV"/>
+                                    <constraint firstItem="3lv-3i-0KF" firstAttribute="centerY" secondItem="g7e-DK-84C" secondAttribute="centerY" id="E28-jg-CbE"/>
+                                    <constraint firstAttribute="height" constant="40" id="IGg-IP-eVZ"/>
+                                    <constraint firstItem="3lv-3i-0KF" firstAttribute="centerX" secondItem="g7e-DK-84C" secondAttribute="centerX" id="MPS-ig-LJE"/>
+                                    <constraint firstItem="IrE-WU-vhN" firstAttribute="centerY" secondItem="g7e-DK-84C" secondAttribute="centerY" id="V86-Yo-lTg"/>
+                                    <constraint firstAttribute="trailing" secondItem="ruw-p9-aVe" secondAttribute="trailing" constant="8" id="cZW-8X-QTO"/>
+                                    <constraint firstItem="IrE-WU-vhN" firstAttribute="leading" secondItem="g7e-DK-84C" secondAttribute="leading" constant="8" id="zM9-22-dq5"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="0ie-Mv-kTR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5sh-kl-0MY"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0ie-Mv-kTR" secondAttribute="bottom" id="agj-M8-Jic"/>
+                            <constraint firstItem="g7e-DK-84C" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9N8-tg-37T"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="g7e-DK-84C" secondAttribute="bottom" id="Xa4-NU-O6f"/>
+                            <constraint firstItem="g7e-DK-84C" firstAttribute="top" secondItem="0ie-Mv-kTR" secondAttribute="bottom" id="dp3-Cu-dNY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="0ie-Mv-kTR" secondAttribute="top" id="f06-Yv-xjB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="g7e-DK-84C" secondAttribute="trailing" id="kNg-om-ykq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0ie-Mv-kTR" secondAttribute="trailing" id="p2I-Pu-GC2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="selectedDateLabel" destination="3lv-3i-0KF" id="Gge-pf-B5d"/>
                         <outlet property="textView" destination="0ie-Mv-kTR" id="CMm-wD-pNF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="12" y="78.710644677661179"/>
+            <point key="canvasLocation" x="12" y="78.325123152709367"/>
         </scene>
     </scenes>
 </document>
