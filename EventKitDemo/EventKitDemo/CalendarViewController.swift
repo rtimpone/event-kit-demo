@@ -19,7 +19,7 @@ class CalendarViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        selectedDate = defaultDate()
+        changeDate(to: defaultDate())
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -76,7 +76,7 @@ private extension CalendarViewController {
         //show an alert directing the user to Settings
     }
     
-    func updateDateLabe(for date: Date) {
+    func updateDateLabel(for date: Date) {
         let df = DateFormatter()
         df.dateFormat = "MMMM d, yyyy"
         selectedDateLabel.text = df.string(from: date)
@@ -84,12 +84,12 @@ private extension CalendarViewController {
     
     func changeDate(to date: Date) {
         selectedDate = date
-        updateDateLabe(for: date)
+        updateDateLabel(for: date)
         clearTextView()
         loadCalendarData(for: date)
     }
     
-    // MARK - Permissions
+    // MARK: - Permissions
     
     func checkForPermission() {
         
@@ -118,7 +118,7 @@ private extension CalendarViewController {
         }
     }
     
-    // MARK - Text View
+    // MARK: - Text View
     
     func clearTextView() {
         textView.text = ""
@@ -134,7 +134,7 @@ private extension CalendarViewController {
         textView.text = currentText + "\n"
     }
     
-    // MARK - Date Management
+    // MARK: - Date Management
     
     func defaultDate() -> Date {
         let now = Date()
