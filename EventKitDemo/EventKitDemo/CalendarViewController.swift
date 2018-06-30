@@ -50,25 +50,9 @@ private extension CalendarViewController {
         let events = store.events(matching: predicate)
         
         for event in events {
-            
-            guard let title = event.title, let startTime = event.startDate else {
-                return
-            }
-            
-            let df = DateFormatter()
-            df.dateFormat = "h:mm a"
-            let localStartTimeString = df.string(from: startTime)
-            
-            printToTextView(title)
-            
-            printToTextView(event.calendar.title)
-            
-            if let location = event.location, !location.isEmpty {
-                printToTextView(location)
-            }
-            
-            printToTextView(localStartTimeString)
-            printBlankLineToTextView()
+            let eventViewModel = EventViewModel(event: event)
+            let output = eventViewModel.consoleOutput
+            printToTextView(output)
         }
     }
     
