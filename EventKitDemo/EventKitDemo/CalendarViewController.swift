@@ -28,11 +28,19 @@ class CalendarViewController: UIViewController {
     }
     
     @IBAction func previousDayAction(_ sender: UIButton) {
+        
+        let generator = UIImpactFeedbackGenerator(style: .light)
+        generator.impactOccurred()
+        
         let date = previousDate(before: selectedDate)
         changeDate(to: date)
     }
     
     @IBAction func nextDayAction(_ sender: UIButton) {
+        
+        let generator = UIImpactFeedbackGenerator(style: .light)
+        generator.impactOccurred()
+        
         let date = nextDate(after: selectedDate)
         changeDate(to: date)
     }
