@@ -28,11 +28,19 @@ class CalendarViewController: UIViewController {
     }
     
     @IBAction func previousDayAction(_ sender: UIButton) {
+        
+        let generator = UIImpactFeedbackGenerator(style: .light)
+        generator.impactOccurred()
+        
         let date = previousDate(before: selectedDate)
         changeDate(to: date)
     }
     
     @IBAction func nextDayAction(_ sender: UIButton) {
+        
+        let generator = UIImpactFeedbackGenerator(style: .light)
+        generator.impactOccurred()
+        
         let date = nextDate(after: selectedDate)
         changeDate(to: date)
     }
@@ -50,25 +58,9 @@ private extension CalendarViewController {
         let events = store.events(matching: predicate)
         
         for event in events {
-            
-            guard let title = event.title, let startTime = event.startDate else {
-                return
-            }
-            
-            let df = DateFormatter()
-            df.dateFormat = "h:mm a"
-            let localStartTimeString = df.string(from: startTime)
-            
-            printToTextView(title)
-            
-            printToTextView(event.calendar.title)
-            
-            if let location = event.location, !location.isEmpty {
-                printToTextView(location)
-            }
-            
-            printToTextView(localStartTimeString)
-            printBlankLineToTextView()
+            let eventViewModel = EventViewModel(event: event)
+            let output = eventViewModel.consoleOutput
+            printToTextView(output)
         }
     }
     
